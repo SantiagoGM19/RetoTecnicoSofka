@@ -1,6 +1,6 @@
 class Jugador:
     
-    __id = 0
+    __nickName = 0
     __nombre = None
     __puntaje = 0
     
@@ -12,9 +12,9 @@ class Jugador:
     
     def aumentarPuntaje(self, factor): self.__puntaje += 100*factor
     
-    def obtenerId(self): return self.__id
+    def obtenerNickName(self): return self.__nickName
     
-    def registrarId(self, id): self.__id = id
+    def registrarNickName(self, nickName): self.__nickName = nickName
     
     
     
