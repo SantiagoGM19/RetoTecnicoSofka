@@ -1,9 +1,11 @@
 class Pregunta:
     #opciones es un diccionario con 4 opciones donde el identificador es un 1 o un 0
     #solo habrá una opción con identificador 1 para saber que es la opción correcta
-    __enunciado = None
-    __opciones = None
+    __enunciado = ""
+    __opciones = []
     __opcionCorrecta = None
+    __dificultad = 0
+    __categoria = ""
     
     def obtenerEnunciado(self): return self.__enunciado
     
@@ -11,9 +13,17 @@ class Pregunta:
     
     def obtenerOpcionCorrecta(self): return self.__opcionCorrecta
     
-    def actualizar_enunciado(self, enunciado): self.__enunciado = enunciado
+    def obtenerDificultad(self): return self.__dificultad
     
-    def actualizar_opciones(self, opciones): self.__opciones
+    def obtenerCategoria(self): return self.__categoria
     
-    def actualizar_opcionCorrecta(self, opcionCorrecta): self.__opcionCorrecta = opcionCorrecta
+    def actualizarEnunciado(self, enunciado): self.__enunciado = enunciado
+    
+    def actualizarOpciones(self, opciones): self.__opciones
+    
+    def actualizarOpcionCorrecta(self, opcionCorrecta): self.__opcionCorrecta = opcionCorrecta
+    
+    def actualizarDificultad(self, dificultad): self.__dificultad = dificultad
+    
+    def actualizarCategoria(self, categoria): self.__categoria = categoria
     

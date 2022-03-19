@@ -21,16 +21,31 @@ class ConexionBD:
                   "posible rechazo de conexión, revisar y luego intentar de nuevo")
 
     def obtenerPreguntas(self):
-
-        query = ('SELECT categorias.nombre, preguntas.enunciado, preguntas.opcion_1, '
-                'preguntas.opcion_2, preguntas.opcion_3, preguntas.opcion_4, '
-                'preguntas.correcta FROM preguntas '
-                'JOIN categorias ON categorias.id = preguntas.id_categoria')
-
         try:
+            query = ('SELECT categorias.nombre, categorias.dificultad, preguntas.enunciado, preguntas.opcion1,'
+            'preguntas.opcion2, preguntas.opcion3, preguntas.opcion4, '
+            'preguntas.correcta FROM preguntas '
+            'JOIN categorias ON categorias.id = preguntas.id_categoria')
             self.cursor.execute(query)
             preguntas = self.cursor.fetchall()
             return preguntas
 
         except Exception as error:
             raise error
+    
+    def guardarJuego(self, jugador, rondaMaxima, acumulado, esFinalForzao):    
+        try:
+            idJugador = jugador.obtenerId()
+            puntaje = jugador.obtenerPuntaje()
+        
+            queryJugador = 'UPDATE jugadores SET puntaje = {} where id = {} '.format(puntaje, idJugador)
+        
+            queryJuego = ('INSERT INTO juegos (id_jugador, rondaMaxima, puntajeMaximo, acumulado, finalForzado)'
+                      'VALUES ({},{},{},{},{})'.format(idJugador, rondaMaxima, puntaje, acumulado, esFinalForzao)
+                      )
+            self.cursor.execute(queryJugador)
+            self.cursor.execute(queryJuego)
+        except Exception as error:
+            raise error
+    
+    
