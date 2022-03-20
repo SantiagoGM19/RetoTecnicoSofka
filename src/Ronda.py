@@ -52,6 +52,7 @@ class Ronda:
             print("Felicidades jugador ", self.__jugador.obtenerNombre(),
                   "has logrado terminar la última ronda, tu puntaje es: ",
                   self.__jugador.obtenerPuntaje())
+            self.acumularPremio()
             self.terminarRonda(False)
         else:
             self.__jugador.aumentarPuntaje(self.__nivelDificultad)
