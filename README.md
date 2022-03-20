@@ -3,7 +3,7 @@
 Saludos! En este repositorio se encuentra la solución al reto técnico del concurso de preguntas. Les daré algunas indicaciones para la facil y completa ejecución del programa.
 
 Primeramente en el repositorio se encuentra la carpeta src en donde está todo el código fuente. Cabe aclarar que el programa está hecho para ser ejecutado por interfaz de consola.
-Segundo, en el repo se encuentra el script sql para ser ejecutado para la creación de la base de datos. Como algo adicional a esto, también se encuentra montado aquí el modelado de datos de la base de datos.
+Segundo, en el repo se encuentra el script sql para ser ejecutado para la creación de la base de datos. Como algo adicional a esto, también se encuentra montado aquí el modelado de datos de la base de datos nombrado como concurso_preguntas.png.
 
 ### Pasos previos a la ejecución
 
